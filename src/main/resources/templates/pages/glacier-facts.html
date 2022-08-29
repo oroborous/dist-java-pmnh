@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Glacier Facts</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
+
+<head th:replace="fragments/_header :: head(pageTitle='Glacier Facts')">
 </head>
+
 <body>
 <div th:insert="fragments/_header :: header"></div>
 <h2>Wisconsin's Last Glacier</h2>
