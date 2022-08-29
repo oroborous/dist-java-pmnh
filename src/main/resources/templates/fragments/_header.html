@@ -6,6 +6,18 @@
     <meta charset="UTF-8">
     <title th:text="${pageTitle}"></title>
     <link rel="stylesheet" th:href="@{/style.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#locales").change(function () {
+                var selectedOption = $('#locales').val();
+                if (selectedOption != ''){
+                    window.location.replace('/?lang=' + selectedOption);
+                }
+            });
+        });
+    </script>
 </head>
 
 <header th:fragment="header">
@@ -18,8 +30,17 @@
             <li><a th:href="@{/glaciers/trail}">Ice Age Trail</a></li>
             <li><a th:href="@{/redirect-me}">Redirect</a></li>
             <li><a th:href="@{/forward-me}">Forward</a></li>
+            <li>
+                <span th:text="#{lang.change}"></span>:
+                <select id="locales">
+                    <option value=""></option>
+                    <option value="en" th:text="#{lang.eng}"></option>
+                    <option value="fr" th:text="#{lang.fr}"></option>
+                </select>
+            </li>
         </ul>
     </nav>
+    <h1 th:text="#{greeting}">GREETING</h1>
 </header>
 
 </body>
