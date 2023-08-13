@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/_header :: head(pageTitle='Pewaukee Museum of Natural History')">
+<head th:replace="~{fragments/_header :: head(pageTitle='Pewaukee Museum of Natural History')}">
 </head>
 
 <body>
-<div th:insert="fragments/_header :: header"></div>
+<div th:insert="~{fragments/_header :: header}"></div>
 <h2>
     Mission Statement
 </h2>
@@ -29,6 +29,6 @@
 <p>
     Content taken from <a href="https://www.cablemuseum.org/">here.</a>
 </p>
-<div th:replace="fragments/_footer :: footer"></div>
+<div th:replace="~{fragments/_footer :: footer}"></div>
 </body>
 </html>
